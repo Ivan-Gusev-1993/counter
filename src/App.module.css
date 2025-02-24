@@ -1,0 +1,48 @@
+.App {
+    background-color: #282c34;
+    max-width: 500px
+;
+    max-height: max-content;
+    border: solid 3px cornflowerblue;
+    border-radius: 15px;
+    display: flex;
+    margin: auto;
+    padding: 20px;
+    margin-top: 30px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.value {
+    border: solid 3px cornflowerblue;
+    text-align: center;
+    width: 98%;
+    margin: auto;
+    font-size: 100px;
+    font-weight: bold;
+    min-height: 180px;
+    align-content: center;
+    color: cornflowerblue;
+    border-radius: 15px;
+}
+
+.buttonPlace {
+    border: solid 3px cornflowerblue;
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.disable{
+    border: solid 3px cornflowerblue;
+    text-align: center;
+    width: 98%;
+    margin: auto;
+    font-size: 100px;
+    font-weight: bold;
+    min-height: 180px;
+    align-content: center;
+    color: red;
+    border-radius: 15px;
+}

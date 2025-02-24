@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Button from "./Button";
+import s from './App.module.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let [count, setCount] = useState(0)
+
+    const valueUp = () => {
+        setCount(++count)
+        if (count > 5){
+            setCount(5)
+        }
+    }
+
+    const resetValue = () => {
+        setCount(0)
+    }
+
+    return (
+        <div className={s.App}>
+            <div className={count === 5 ? s.disable : s.value}>{count}</div>
+
+            <div className={s.buttonPlace}>
+                <Button count={count}  name={'inc'} onClick={valueUp}/>
+                <Button zero={count} name={'reset'} onClick={resetValue}/>
+            </div>
+
+
+        </div>
+    );
 }
 
 export default App;

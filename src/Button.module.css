@@ -1,0 +1,18 @@
+.button {
+    padding: 10px 30px 10px 30px;
+    background-color: cornflowerblue;
+    border-radius: 15px;
+    color: #282c34;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.disableButton{
+    padding: 10px 30px 10px 30px;
+    background-color: cornflowerblue;
+    border-radius: 15px;
+    color: #282c34;
+    font-size: 50px;
+    font-weight: bold;
+    opacity: 60%;
+}
