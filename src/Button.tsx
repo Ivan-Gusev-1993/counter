@@ -5,6 +5,8 @@ type ButtonPropsType = {
     onClick?: () => void
     name: string
     count?: number
+    maxValue?: number
+    styles: string
 }
 
 const Button = (props: ButtonPropsType) => {
@@ -14,7 +16,7 @@ const Button = (props: ButtonPropsType) => {
         }
     }
     return (
-        <button className={props.count === 5 ? s.disableButton : s.button} onClick={onClickHandler}>{props.name}</button>
+        <button className={props.styles} onClick={onClickHandler}>{props.name}</button>
     );
 };
 

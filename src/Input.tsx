@@ -1,19 +1,23 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './Input.module.css'
 
 type InputPropsType = {
     value: number
     callBack:(value:number)=>void
+    setError:(value:string)=>void
+    error: string
 }
 
 const Input = (props: InputPropsType) => {
-    const [inputValue, setInputValue]=useState(0)
     const inputHandler = (e:ChangeEvent<HTMLInputElement>) => {
-        setInputValue(+e.currentTarget.value)
         props.callBack(+e.currentTarget.value)
+        if (+e.currentTarget.value < 0){
+            props.setError('incorrect value')
+        }
+
     }
     return (
-    <input className={inputValue < 0 ? s.errorInput : s.Input} onChange={inputHandler} value={inputValue} type="number"/>
+    <input className={props.value < 0 || props.error ? s.errorInput : s.Input} onChange={inputHandler} value={props.value} type="number"/>
     );
 };
 

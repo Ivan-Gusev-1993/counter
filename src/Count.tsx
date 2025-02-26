@@ -1,27 +1,38 @@
 import React from 'react';
 import s from "./App.module.css";
+import styles from "./Button.module.css";
 import Button from "./Button";
 
 type CountPropsType = {
     count: number
     error: string
-    valueUp: ()=>void
-    resetValue: ()=>void
+    valueUp: () => void
+    resetValue: () => void
+    maxValue: number
+    startValue: number
 }
 
 const Count = (props:CountPropsType) => {
+
+    const stylesForButton = props.count === props.maxValue || props.maxValue < 0 || props.startValue < 0 || props.startValue >= props.maxValue
+        ? styles.disableButton
+        : styles.button
+
+    //props.startValue >= props.maxValue
     return (
         <div>
             <div className={s.App}>
 
 
-                <div className={props.count === 5 ? s.disable : s.value}>
-                    {props.error ? <span className={s.error}>{props.error}</span> : props.count}
+                <div className={props.count === props.maxValue && props.count !== 0 ? s.disable : s.value}>
+                    {props.startValue < 0 || props.maxValue < 0 ? <span className={s.error}>{props.error}</span> : props.count}
                 </div>
 
                 <div className={s.buttonPlace}>
-                    <Button count={props.count} name={'inc'} onClick={props.valueUp}/>
-                    <Button name={'reset'} onClick={props.resetValue}/>
+                    <Button styles={stylesForButton}
+                            count={props.count} maxValue={props.maxValue} name={'inc'} onClick={props.valueUp}
+                    />
+                    <Button styles={styles.button} name={'reset'} onClick={props.resetValue}/>
                 </div>
 
             </div>
