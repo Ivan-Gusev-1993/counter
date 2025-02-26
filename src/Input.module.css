@@ -1,0 +1,17 @@
+.Input{
+    background-color: darkgray;
+    color: darkslateblue;
+    font-size: 30px;
+    margin: 5px;
+    border-radius: 10px;
+    border: solid 4px cornflowerblue;
+}
+
+.errorInput{
+    background-color: indianred;
+    color: darkslateblue;
+    font-size: 30px;
+    margin: 5px;
+    border-radius: 10px;
+    border: red solid 4px;
+}

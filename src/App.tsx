@@ -1,33 +1,53 @@
 import React, {useState} from 'react';
 import './App.css';
-import Button from "./Button";
-import s from './App.module.css'
+import Count from "./Count";
+import SetupValue from "./SetupValue";
 
 function App() {
     let [count, setCount] = useState(0)
+    let [error, setError] = useState('')
+
+    let [maxValue, setMaxValue] = useState(0)
+    let [startValue, setStartValue] = useState(0)
+
+    const setValueHandler = () => {
+        if (startValue < 0 || maxValue < 0) {
+            setError('incorrect value')
+
+        }
+    }
 
     const valueUp = () => {
         setCount(++count)
-        if (count > 5){
-            setCount(5)
-        }
+
+        // if (count > maxValue){
+        //     setCount(count)
+        // }
     }
 
     const resetValue = () => {
         setCount(0)
+        setError('')
     }
 
     return (
-        <div className={s.App}>
-            <div className={count === 5 ? s.disable : s.value}>{count}</div>
+        <>
+            <Count
+                count={count}
+                error={error}
+                valueUp={valueUp}
+                resetValue={resetValue}
+            />
 
-            <div className={s.buttonPlace}>
-                <Button count={count}  name={'inc'} onClick={valueUp}/>
-                <Button zero={count} name={'reset'} onClick={resetValue}/>
-            </div>
-
-
-        </div>
+            <SetupValue
+                startValue={startValue}
+                setStartValue={setStartValue}
+                maxValue={maxValue}
+                setMaxValue={setMaxValue}
+                count={count}
+                setValueHandler={setValueHandler}
+            />
+        </>
     );
 }
 
