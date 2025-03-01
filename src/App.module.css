@@ -52,13 +52,14 @@
     text-align: center;
     width: 98%;
     margin: auto;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
     min-height: 180px;
     align-content: center;
     color: cornflowerblue;
     border-radius: 15px;
     justify-content: space-around;
+
 }
 
 .error{

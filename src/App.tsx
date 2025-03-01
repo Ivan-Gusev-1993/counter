@@ -13,7 +13,7 @@ function App() {
     const setValueHandler = () => {
         if ((startValue < 0 || maxValue < 0) || startValue >= maxValue) {
             setError('incorrect value')
-            console.log('hrenovo')
+            console.log('sobaka')
         }
         setCount(startValue)
     }
@@ -26,16 +26,15 @@ function App() {
 
     const resetValue = () => {
         setError('')
+        setCount(0)
         if((startValue < 0 || maxValue < 0) || startValue >= maxValue) {
             setStartValue(0)
             setMaxValue(0)
-            setCount(0)
         }
     }
 
 
 
- //
     return (
         <>
             <Count

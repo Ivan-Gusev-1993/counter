@@ -5,6 +5,8 @@
     margin: 5px;
     border-radius: 10px;
     border: solid 4px cornflowerblue;
+    max-width: 150px;
+    font-weight: bolder;
 }
 
 .errorInput{
@@ -14,4 +16,6 @@
     margin: 5px;
     border-radius: 10px;
     border: red solid 4px;
+    max-width: 150px;
+    font-weight: bolder;
 }

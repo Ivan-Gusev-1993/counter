@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./App.module.css";
-import styles from "./Button.module.css";
-import Button from "./Button";
+import styles from "./Button/Button.module.css";
+import Button from "./Button/Button";
 
 type CountPropsType = {
     count: number
@@ -14,7 +14,10 @@ type CountPropsType = {
 
 const Count = (props:CountPropsType) => {
 
-    const stylesForButton = props.count === props.maxValue || props.maxValue < 0 || props.startValue < 0 || props.startValue >= props.maxValue
+    const stylesForButton = props.count === props.maxValue ||
+    props.maxValue < 0 ||
+    props.startValue < 0 ||
+    props.startValue >= props.maxValue
         ? styles.disableButton
         : styles.button
 
@@ -23,9 +26,8 @@ const Count = (props:CountPropsType) => {
         <div>
             <div className={s.App}>
 
-
                 <div className={props.count === props.maxValue && props.count !== 0 ? s.disable : s.value}>
-                    {props.startValue < 0 || props.maxValue < 0 ? <span className={s.error}>{props.error}</span> : props.count}
+                    {props.error ? <span className={s.error}>{props.error}</span> : props.count}
                 </div>
 
                 <div className={s.buttonPlace}>
