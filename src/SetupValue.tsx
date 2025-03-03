@@ -17,26 +17,12 @@ type SetupValueProps = {
 
 const SetupValue = (props:SetupValueProps) => {
 
-    const stylesForButton = props.count === props.maxValue ||
-    props.maxValue < 0 ||
-    props.startValue < 0 ||
-    props.startValue >= props.maxValue
-        ? styles.disableButton
-        : styles.button
-
-    const checkValue = ()=>{
-        if (props.maxValue < 0 || props.startValue < 0 || props.startValue >= props.maxValue){
-            props.setError('incorrect value')
-            console.log("1111111111")
-        }
-            }
-
     return (
         <div>
             <div className={s.App}>
                 <div   className={s.setupValue}>
-                    <div>max value : <Input checkValue={checkValue} error={props.error} setError={props.setError} value={props.maxValue} callBack={props.setMaxValue}/></div>
-                    <div>start value : <Input checkValue={checkValue} error={props.error} setError={props.setError} value={props.startValue} callBack={props.setStartValue}/></div>
+                    <div>max value : <Input error={props.error} setError={props.setError} value={props.maxValue} callBack={props.setMaxValue}/></div>
+                    <div>start value : <Input  error={props.error} setError={props.setError} value={props.startValue} callBack={props.setStartValue}/></div>
                 </div>
 
                 <div className={s.buttonPlace}>

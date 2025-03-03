@@ -4,19 +4,23 @@ import Count from "./Count";
 import SetupValue from "./SetupValue";
 
 function App() {
-    const [maxValue, setMaxValue] = useState(0)
-    const [startValue, setStartValue] = useState(0)
+    const startValueCount = Number(localStorage.getItem('start')) || 0;
+    const maxValueCount = Number(localStorage.getItem('max')) || 0;
+    const [maxValue, setMaxValue] = useState(maxValueCount)
+    const [startValue, setStartValue] = useState(startValueCount)
 
-    let [count, setCount] = useState(0)
+    let [count, setCount] = useState(startValueCount)
     const [error, setError] = useState('')
 
     const setValueHandler = () => {
         if ((startValue < 0 || maxValue < 0) || startValue >= maxValue) {
             setError('incorrect value')
-            console.log('sobaka')
         }
         setCount(startValue)
+        localStorage.setItem('start', JSON.stringify(startValue));
+        localStorage.setItem('max', JSON.stringify(maxValue));
     }
+
 
     const valueUp = () => {
         if(count < maxValue){
