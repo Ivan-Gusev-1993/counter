@@ -27,7 +27,7 @@ const SetupValue = (props:SetupValueProps) => {
     const checkValue = ()=>{
         if (props.maxValue < 0 || props.startValue < 0 || props.startValue >= props.maxValue){
             props.setError('incorrect value')
-            console.log("ggggggggggg000000")
+            console.log("1111111111")
         }
             }
 
