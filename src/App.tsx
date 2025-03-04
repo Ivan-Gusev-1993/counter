@@ -14,7 +14,7 @@ function App() {
 
     const setValueHandler = () => {
         if ((startValue < 0 || maxValue < 0) || startValue >= maxValue) {
-            setError('incorrect value')
+            setError('incorrect value!')
         }
         setCount(startValue)
         localStorage.setItem('start', JSON.stringify(startValue));
