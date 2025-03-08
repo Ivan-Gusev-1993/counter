@@ -19,11 +19,12 @@ function App() {
         setCount(startValue)
         localStorage.setItem('start', JSON.stringify(startValue));
         localStorage.setItem('max', JSON.stringify(maxValue));
+
     }
 
 
     const valueUp = () => {
-        if(count < maxValue){
+        if (count < maxValue) {
             setCount(++count)
         }
     }
@@ -31,12 +32,11 @@ function App() {
     const resetValue = () => {
         setError('')
         setCount(0)
-        if((startValue < 0 || maxValue < 0) || startValue >= maxValue) {
+        if ((startValue < 0 || maxValue < 0) || startValue >= maxValue) {
             setStartValue(0)
             setMaxValue(0)
         }
     }
-
 
 
     return (

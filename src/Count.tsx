@@ -12,7 +12,7 @@ type CountPropsType = {
     startValue: number
 }
 
-const Count = (props:CountPropsType) => {
+const Count = (props: CountPropsType) => {
 
     const stylesForButton = props.count === props.maxValue ||
     props.maxValue < 0 ||
