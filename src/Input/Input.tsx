@@ -8,7 +8,6 @@ type InputPropsType = {
     error: string
 }
 
-
 const Input = (props: InputPropsType) => {
     const inputHandler = (e:ChangeEvent<HTMLInputElement>) => {
         props.callBack(+e.currentTarget.value)
